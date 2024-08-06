@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie TV</title>
+    <!-- Global css -->
+    <link rel="stylesheet" href="../css/global.css">
+     <!-- Css link -->
+      <link rel="stylesheet" href="../css/movie.css">
+    <!-- Logo link -->
+     <link rel="shortcut icon" href="../assets/images/Logo.png" type="image/x-icon">
+    <!-- Icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="nav-logo">Movies TV</h1>
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-list-li-a">Asosiy</a></li>
+                <li><a href="./movie.html" class="nav-list-li-a">Kinolar</a></li>
+                <li><a href="./cartoon.html" class="nav-list-li-a">Multfilimlar</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn heart" value="Heart"><i class="fa-solid fa-heart"></i></button>
+                <button class="btn login"><i class="fa-solid fa-right-to-bracket"></i></button>
+                <button class="btn user"><i class="fa-solid fa-user"></i></button>
+            </div>
+            <button class="bars" id="bars"><i class="fa-solid fa-bars"></i></button>
+            <div class="nav-media-list" id="nav-media-list">
+                <ul>
+                    <li><a href="../index.html" class="nav-list-li-a">Asosiy</a></li>
+                    <li><a href="./movie.html" class="nav-list-li-a">Kinolar</a></li>
+                    <li><a href="./cartoon.html" class="nav-list-li-a">Multfilimlar</a></li>
+                    <li><button class="btn search"><i class="fa-solid fa-magnifying-glass"></i></button></li>
+                    <li><button class="btn heart" value="Heart"><i class="fa-solid fa-heart"></i></button></li>
+                    <li>
+                        <button class="btn login"><i class="fa-solid fa-right-to-bracket"></i></button>
+                    </li>
+                    <li>
+                <button class="btn user"><i class="fa-solid fa-user"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="title">Kinolar</h1>
+        <div class="movie-wrapper" id="categoryWrapper">
+        </div>
+    </main>
+        <!-- Main js link -->
+        <script src="../js/main.js" type="module"></script>
+        <!-- Js link -->
+         <script src="../js/movie.js" type="module"></script>
+</body>
+</html>
