@@ -1,31 +1,36 @@
-import { navigatePage } from "./main.js"
+import { FakeData, id, navigatePage, token } from "./main.js"
 
-const [heroBtn,categoryWrapper] = ['#hero-section-btn','.category-wrapper'].map((id)=>document.querySelector(id))
-
-
+const [heroBtn,categoryWrapper,btn,form,toast] = ['#hero-section-btn','.category-wrapper','#form-btn','.form','.taostify-container'].map((id)=>document.querySelector(id))
 
 heroBtn.addEventListener('click',()=>navigatePage("/pages/movie.html"))
 
 
 
-let FakeData = [
-    {title:"Kinollar",children:[
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    {image:"./assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
-    ]},
-]
+btn.onclick = () =>{
+   let firstInput = form[0]
+   let SecondInput = form[1]
+   if(firstInput.value === "" && SecondInput.value === ""){
+         ShowToast("! inputlarni to`ldiring","info")      
+   }else{
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURI(`Foydalanuvchi ma'lumotlari: \n\n Ismi:${firstInput.value} \n\n description:${SecondInput.value}`)}`).then((data)=>{
+         console.log(data);
+         firstInput.value = ""
+         SecondInput.value = ""
+         if(data.ok){
+         ShowToast("Ma`lumotlar keldi","success")
+         }
+      })
+   }
+}
+const ShowToast = (text,type) => {
+   toast.classList.add("active")
+   toast.className += " " + type
+   toast.innerHTML =  " " + text
+    setTimeout(()=>{
+     toast.classList.remove("active")
+    },2000)
+}
+
 
 const MapData = () => {
     FakeData.map((item)=>{
@@ -39,7 +44,7 @@ const MapData = () => {
     //    =================
     //    =================
        item.children.map((i)=>{
-       const [list,img,title,time,date,lang] = ['div','img','h1','p','p','p'].map((id)=>document.createElement(id))
+       const [list,img,title,time,date,lang,btn] = ['div','img','h1','p','p','p','button'].map((id)=>document.createElement(id))
        img.src = i.image
        list.appendChild(img)
     //    =================
@@ -58,9 +63,13 @@ const MapData = () => {
        lang.innerHTML = "<span>language:</span> " + i.lang
        lang.className = 'card-p'
        list.appendChild(lang)
+      //  ===========
+      btn.innerHTML = "Ko`rish"
+      btn.className = "card-btn"
+      btn.onclick = () => navigatePage("/pages/moviePlayer.html?title=" + i.title)
+      list.appendChild(btn)
     //    =================
        list.className = 'category-card'
-       list.addEventListener('click',()=>navigatePage("/pages/moviePlayer.html?title=" + i.title))
        category.appendChild(list)
        })
     //    =================
@@ -71,3 +80,6 @@ const MapData = () => {
 }
 
 MapData()
+
+
+

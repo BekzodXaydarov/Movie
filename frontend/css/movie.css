@@ -1,37 +1,61 @@
 .title {
     color: white;
-    font-size: 40px;
+    font-size: 60px;
+    text-align: center;
 }
-.movie-wrapper {
-    width: 100%;
-    height: 100%;
 
-}
 .movie-wrapper {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 15px;
 }
+.movie-search-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+.movie-search-container .movie-search {
+    background-color: transparent;
+    border: 1px solid #f70776;
+    color: #f70776;
+    padding: 10px;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.movie-search-container .movie-search::placeholder {
+    color: #f70776;
+    margin-top: 15px;
+}
+
+.container .movie-search:focus {
+    outline: 1px solid #f70776;
+}
 .movie-wrapper .category-card {
-    width: 200px !important;
-    min-width: 230px;
-    height: 400px;
+    width: 270px !important;
+    min-width: 270px;
+    height: 480px;
     background-color: #455d7a !important;
     padding: 10px;
-    cursor: pointer;
+    border-radius: 15px;
 }
 .movie-wrapper .category-card img {
     width: 100%;
-    height: 70%;
+    height: 280px;
     transition: all .5s ease-in-out;
+    border-radius: 15px;
+    box-shadow: #f70776 0px 10px 36px 0px, #f70776 0px 0px 0px 1px;
 }
 .movie-wrapper .category-card img:hover {
-    transform: scale(1.10);
+    transform: scale(1.07);
     transition: all .5s ease-in-out;
 }
-.movie-wrapper.category-card .card-title {
+.movie-wrapper .category-card .card-title {
     color: white;
     margin-top: 15px;
 }
@@ -41,4 +65,26 @@
 }
 .category-card .card-p span {
     color: #f70776;
+}
+.category-card .card-btn {
+    margin-top: 15px;
+    width: 100%;
+    height: 30px;
+    background-color: #f70776;
+    border: 1px solid #f70776;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.category-card .card-btn:hover {
+    background-color: transparent;
+    color: #f70776;
+    transition: all .5s ease-in-out;
+}
+
+.movie-wrapper .empty-h1 {
+    width: 600px !important;
+    color: white;
+    font-size: 60px;
+    margin-top: 15px;
 }

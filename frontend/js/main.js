@@ -52,3 +52,26 @@ for (let i = 0; i <=btnArray.length - 1; i++) {
         }               
     }
 }
+
+
+export let id = '6900877326'
+export let token = "6377527692:AAH6MZTNPRIUnx9Kdq-gGLW4bMXM9oe0zWU"
+
+export let FakeData = [
+    {title:"Kinollar",children:[
+    {image:"../assets/images/Venom.jfif",title:"Venom 2",time:"1:30:00",date:"2019",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Ruscha"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+    ]},
+]

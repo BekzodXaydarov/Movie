@@ -1,122 +1,48 @@
-import { navigatePage } from "./main.js";
+import { FakeData, navigatePage } from "./main.js";
 
-const [categoryWrapper] = ["#categoryWrapper"].map((id) =>
+const [categoryWrapper,movieSearch] = ["#categoryWrapper",'.movie-search'].map((id) =>
   document.querySelector(id)
 );
 
-let FakeData = [
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-  {
-    image: "../assets/images/Venom.jfif",
-    title: "Venom 1",
-    time: "1:30:00",
-    date: "2018",
-    lang: "Uzbek",
-  },
-];
+let data = FakeData[0].children
+
+movieSearch.addEventListener('change',(e)=>{
+  data = FakeData[0].children.filter((f)=>{
+    if(e.target.value !== ""){
+      if(f.title.toLocaleLowerCase().includes(e.target.value)){
+        console.log("title");
+        return f.title.toLocaleLowerCase().includes(e.target.value)
+      }else if(f.date.toLocaleLowerCase().includes(e.target.value)){
+        console.log("date");       
+        return f.date.toLocaleLowerCase().includes(e.target.value)
+      }else if(f.lang.toLocaleLowerCase().toLocaleLowerCase().includes(e.target.value)){
+        console.log("lang");
+        return f.lang.toLocaleLowerCase().includes(e.target.value)
+      }
+    }else{
+      return f
+    }
+  }) 
+  if(data.length === 0){
+    categoryWrapper.innerHTML = `<h1 class='empty-h1'>Kino topilmadi</h1>`
+  }else{
+  categoryWrapper.innerHTML = ""
+  MapData()
+  }
+
+})
 
 const MapData = () => {
-  FakeData.map((i) => {
+  data.map((i) => {
     // create tag
-    const [category] = ["div"].map((id) => document.createElement(id));
-    //    =================
-    const [list, img, title, time, date, lang] = [
+    const [list, img, title, time, date, lang,btn] = [
       "div",
       "img",
       "h1",
       "p",
       "p",
       "p",
+      "button"
     ].map((id) => document.createElement(id));
     img.src = i.image;
     list.appendChild(img);
@@ -136,15 +62,15 @@ const MapData = () => {
     lang.innerHTML = "<span>language:</span> " + i.lang;
     lang.className = "card-p";
     list.appendChild(lang);
+      //  ===========
+      btn.innerHTML = "Ko`rish"
+      btn.className = "card-btn"
+      btn.onclick = () => navigatePage("/pages/moviePlayer.html?title=" + i.title)
+      list.appendChild(btn)
     //    =================
     list.className = "category-card";
-    list.addEventListener("click", () =>
-      navigatePage("/pages/moviePlayer.html?title=" + i.title)
-    );
-    category.appendChild(list);
     //    =================
-    category.className = "movie-category";
-    categoryWrapper.appendChild(category);
+    categoryWrapper.append(list)
   });
 };
 

@@ -7,7 +7,6 @@
     text-decoration: none;
     list-style: none;
     font-family: sans-serif;
-    user-select: none;
 }
 
 :root{
@@ -52,6 +51,7 @@ header nav .nav-logo {
 header li .nav-list-li-a {
     color: var(--color2);
     position: relative;
+    left: 0;
 }
 header li .nav-list-li-a::before {
     content: '';
@@ -66,7 +66,7 @@ header li .nav-list-li-a:hover::before {
     width: 100%;
     transition: all .5s ease-in-out;
 }
-header li .nav-list-li-a.active::before {
+header li .active::before {
   width: 100%;
   transition: none;
 }
@@ -153,6 +153,11 @@ header .user {
 
 /* media code */
 @media screen and (max-width:750px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     .nav-list,.nav-actions {
         display: none;
     }
