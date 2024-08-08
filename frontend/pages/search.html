@@ -6,12 +6,24 @@
     <title>Movie TV</title>
     <!-- Global css -->
     <link rel="stylesheet" href="../css/global.css">
+    <!-- Css link -->
+     <link rel="stylesheet" href="../css/search.css">
     <!-- Logo link -->
-     <link rel="shortcut icon" href="./assets/images/Logo.png" type="image/x-icon">
+     <link rel="shortcut icon" href="../assets/images/Logo.png" type="image/x-icon">
     <!-- Icons link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Search</h1>
+    <div class="container">
+        <button class="arrow" id="arrow-btn"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="search-container">
+        <input type="text" placeholder="Kino yoki multfilimni nomini kiriting" class="search" id="search">
+        </div>
+        <div class="search-wrapper" id="categoryWrapper">
+        </div>
+    </div>
+
+    <!-- Js link -->
+     <script src="../js/search.js" type="module"></script>
 </body>
 </html>

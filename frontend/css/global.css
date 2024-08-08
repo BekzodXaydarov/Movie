@@ -7,6 +7,7 @@
     text-decoration: none;
     list-style: none;
     font-family: sans-serif;
+    border: 1px solid transparent;
 }
 
 :root{
@@ -60,6 +61,7 @@ header li .nav-list-li-a::before {
     height: 2px;
     background-color: var(--color2);
     top: 20px;
+    left: 0;
     transition: all  .5s ease-in-out;
 }
 header li .nav-list-li-a:hover::before {
@@ -69,6 +71,7 @@ header li .nav-list-li-a:hover::before {
 header li .active::before {
   width: 100%;
   transition: none;
+  left: 0;
 }
 header .btn {
  margin-right: 15px;
@@ -148,7 +151,6 @@ header .user {
     width: 100%;
     padding-left: 70px;
     padding-right: 70px;
-    margin-top: 150px;
 }
 
 /* media code */

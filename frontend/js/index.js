@@ -33,15 +33,12 @@ const ShowToast = (text,type) => {
 
 
 const MapData = () => {
-    FakeData.map((item)=>{
+    FakeData.map((item,index)=>{
         // create tag
-       const [categoryTitle,category] = ['h1','div'].map((id)=>document.createElement(id))
+       const [categoryTitle,category] = ['h1','div','button','button'].map((id)=>document.createElement(id))
        categoryTitle.innerHTML = item.title
        categoryTitle.className = 'category-title'
        categoryWrapper.appendChild(categoryTitle)
-    //    ============
-
-    //    =================
     //    =================
        item.children.map((i)=>{
        const [list,img,title,time,date,lang,btn] = ['div','img','h1','p','p','p','button'].map((id)=>document.createElement(id))
@@ -72,8 +69,9 @@ const MapData = () => {
        list.className = 'category-card'
        category.appendChild(list)
        })
+
     //    =================
-       category.className = "category"
+       category.className =   index % 2 === 0 ? "category  category1":"category category2"
        categoryWrapper.appendChild(category)
        
     })

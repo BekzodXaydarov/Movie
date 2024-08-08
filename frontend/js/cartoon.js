@@ -1,21 +1,22 @@
 import { FakeData, navigatePage, Search } from "./main.js";
 
-const [categoryWrapper,movieSearch] = ["#categoryWrapper",'.movie-search'].map((id) =>
+const [categoryWrapper,cartoonSearch] = ["#categoryWrapper",'.cartoon-search'].map((id) =>
   document.querySelector(id)
 );
 
-let data = FakeData[0].children
+let data = FakeData[1].children
 
-movieSearch.addEventListener('change',(e)=>{
-  data = Search(FakeData[0].children,e.target.value)
+cartoonSearch.addEventListener('change',(e)=>{
+  data = Search(FakeData[0].children,e.target.value)  
+
   if(data.length === 0){
     categoryWrapper.innerHTML = `<h1 class='empty-h1'>Kino topilmadi</h1>`
   }else{
   categoryWrapper.innerHTML = ""
   MapData()
   }
-
 })
+
 
 const MapData = () => {
   data.map((i) => {

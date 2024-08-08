@@ -52,6 +52,28 @@
     padding: 10px;
     transition: all .5s ease-in-out;
 }
+.category1 {
+    animation: slider2 30s infinite;
+}
+.category2 {
+    animation: slider 30s infinite;
+}
+@keyframes slider {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes slider2 {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 .category-wrapper  .btn {
     display: inline-block !important;
     background-color: transparent;
@@ -75,10 +97,9 @@
 .category .category-card {
     width: 270px !important;
     min-width: 270px;
-    height: 460px;
+    height: 470px;
     background-color: #455d7a !important;
     padding: 10px;
-    cursor: pointer;
     border-radius: 15px;
 }
 .category .category-card img {
@@ -87,6 +108,7 @@
     transition: all .5s ease-in-out;
     border-radius: 15px;
     box-shadow: #f70776 0px 10px 36px 0px, #f70776 0px 0px 0px 1px;
+    cursor: pointer;
 }
 .category .category-card img:hover {
     transform: scale(1.07);
@@ -118,6 +140,7 @@
     color: #f70776;
     transition: all .5s ease-in-out;
 }
+
 /* ========================== */
 .contact-title {
     color: white;
@@ -224,6 +247,7 @@
     padding-left: 15px;
     border-radius: 10px;
 }
+
 .active {
     right: 10px;
     transition: all 1s ease-in-out;
@@ -240,7 +264,9 @@
     background-color: red;
     color: white;
 }
-
+.container {
+    margin-top: 100px;
+}
 /* media code */
 
 @media screen and (max-width:600px) {

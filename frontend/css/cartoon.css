@@ -6,14 +6,14 @@
 .container {
     margin-top: 150px;
 }
-.movie-wrapper {
+.cartoon-wrapper {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 15px;
 }
-.movie-search-container {
+.cartoon-search-container {
     width: 100%;
     height: 50px;
     display: flex;
@@ -21,7 +21,7 @@
     justify-content: center;
     margin-top: 15px;
 }
-.movie-search-container .movie-search {
+.cartoon-search-container .cartoon-search {
     background-color: transparent;
     border: 1px solid #f70776;
     color: #f70776;
@@ -30,15 +30,15 @@
     border-radius: 5px;
 }
 
-.movie-search-container .movie-search::placeholder {
+.cartoon-search-container .cartoon-search::placeholder {
     color: #f70776;
     margin-top: 15px;
 }
 
-.container .movie-search:focus {
+.container .cartoon-search:focus {
     outline: 1px solid #f70776;
 }
-.movie-wrapper .category-card {
+.cartoon-wrapper .category-card {
     width: 270px !important;
     min-width: 270px;
     height: 480px;
@@ -46,18 +46,18 @@
     padding: 10px;
     border-radius: 15px;
 }
-.movie-wrapper .category-card img {
+.cartoon-wrapper .category-card img {
     width: 100%;
     height: 280px;
     transition: all .5s ease-in-out;
     border-radius: 15px;
     box-shadow: #f70776 0px 10px 36px 0px, #f70776 0px 0px 0px 1px;
 }
-.movie-wrapper .category-card img:hover {
+.cartoon-wrapper .category-card img:hover {
     transform: scale(1.07);
     transition: all .5s ease-in-out;
 }
-.movie-wrapper .category-card .card-title {
+.cartoon-wrapper .category-card .card-title {
     color: white;
     margin-top: 15px;
 }
@@ -84,9 +84,19 @@
     transition: all .5s ease-in-out;
 }
 
-.movie-wrapper .empty-h1 {
+.cartoon-wrapper .empty-h1 {
     width: 600px !important;
     color: white;
     font-size: 60px;
     margin-top: 15px;
+}
+
+@media screen and (max-width:500px) {
+    .empty-h1 {
+        font-size: 30px !important;
+    }
+    .category-card {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
 }

@@ -24,13 +24,13 @@ bars?.addEventListener('click',()=>{
 })
 
 export const navigatePage = (location)=>window.location.href = location 
-nav_logo[0].addEventListener('click',()=>navigatePage("/index.html"))
-search[0].addEventListener('click',()=>navigatePage("/pages/search.html"))
-heart[0].addEventListener('click',()=>navigatePage("/pages/heart.html"))
-login[0].addEventListener('click',()=>navigatePage("/pages/login.html"))
-search[1].addEventListener('click',()=>navigatePage("/pages/search.html"))
-heart[1].addEventListener('click',()=>navigatePage("/pages/heart.html"))
-login[1].addEventListener('click',()=>navigatePage("/pages/login.html"))
+nav_logo[0]?.addEventListener('click',()=>navigatePage("/index.html"))
+search[0]?.addEventListener('click',()=>navigatePage("/pages/search.html"))
+heart[0]?.addEventListener('click',()=>navigatePage("/pages/heart.html"))
+login[0]?.addEventListener('click',()=>navigatePage("/pages/login.html"))
+search[1]?.addEventListener('click',()=>navigatePage("/pages/search.html"))
+heart[1]?.addEventListener('click',()=>navigatePage("/pages/heart.html"))
+login[1]?.addEventListener('click',()=>navigatePage("/pages/login.html"))
 
 for (let i = 0; i <=aArray.length - 1; i++) {
         if(aArray[i].link.includes(window.location.pathname)){
@@ -74,4 +74,36 @@ export let FakeData = [
     {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
     {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
     ]},
+    {title:"Multfilimlar",children:[
+      {image:"../assets/images/Venom.jfif",title:"Venom 2",time:"1:30:00",date:"2019",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Ruscha"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      {image:"../assets/images/Venom.jfif",title:"Venom 1",time:"1:30:00",date:"2018",lang:"Uzbek"},
+      ]},
 ]
+
+export const Search = (data,value) => {
+   return data.filter((f)=>{
+        if(value !== ""){
+          if(f.title.toLocaleLowerCase().includes(value)){
+            return f.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+          }else if(f.date.toLocaleLowerCase().includes(value.toLocaleLowerCase())){
+            return f.date.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+          }else if(f.lang.toLocaleLowerCase().includes(value.toLocaleLowerCase())){
+            return f.lang.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+          }
+        }else{
+          return f
+        }
+      }) 
+}
